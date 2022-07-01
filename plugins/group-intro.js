@@ -1,8 +1,7 @@
-let handler = async m => {
+let handler = async (m, { conn }) => {
 
-let krtu = `Kartu Intro`
-m.reply(`
-0ཻུ۪۪ꦽꦼ̷⸙‹•══════════════♡᭄
+
+let krtu = `0ཻུ۪۪ꦽꦼ̷⸙‹•══════════════♡᭄
 │       *「 Kartu Intro 」*
 │ *Nama     :* 
 │ *Gender   :* 
@@ -13,9 +12,10 @@ m.reply(`
 │ *Agama    :* 
  |  *Status     :* 
 ╰═════ꪶ ཻུ۪۪ꦽꦼ̷⸙ ━ ━ ━ ━ ꪶ ཻུ۪۪ꦽꦼ̷⸙
-`.trim()) // Tambah sendiri kalo mau
+`
+conn.fakeReply(m.chat, krtu, '0@s.whatsapp.net', wm)
 }
 handler.command = /^(intro)$/i
 handler.group = true
 
-export default handler 
+export default handler
